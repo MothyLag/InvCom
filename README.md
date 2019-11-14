@@ -15,7 +15,7 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-# Para los chicos que ocupan la aplicación
+## Para los chicos que ocupan la aplicación
 
 yo estoy trabajando con visual code para desarrollar la aplicación,
 así que muy probablemente la estructura del proyecto sea diferente
