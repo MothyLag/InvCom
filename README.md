@@ -14,3 +14,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+#para los chicos de la aplicación
+
+yo estoy trabajando con visual code para desarrollar la aplicación,
+así que muy probablemente la estructura del proyecto sea diferente
+pero no se preocupen, solo tomen los archivos que se encuentran en la carpeta "lib" y
+coloquenlos en su proyecto en la misma carpeta (lib).
