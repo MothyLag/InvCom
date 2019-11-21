@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_events/AddForm/event.request.dart';
 import 'package:flutter_events/AddForm/event.type.dart';
+import 'package:flutter_events/HomePage/home.page.dart';
 import 'package:localstorage/localstorage.dart';
 
 class AddForm extends StatefulWidget {
@@ -50,7 +51,18 @@ class AddFormState extends State<AddForm> {
                       "date": _event.date,
                       "image": "nada",
                       "token": storage.getItem("token")
-                    }).then((response) => print(response.body));
+                    }).then((response) => {
+                          if (response.body != null)
+                            {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MyHomePage(
+                                            title: "myEvents",
+                                            localStorage: storage,
+                                          )))
+                            }
+                        });
                   }
                 },
               )

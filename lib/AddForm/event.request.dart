@@ -12,4 +12,10 @@ class EventRequests {
     final response = await http.get(url, headers: {"authorization": token});
     return response;
   }
+
+  Future deleteEvent(idEvent) async {
+    const url = "https://invcom.herokuapp.com/delete-event/";
+    final response = await http.delete(url, headers: {"_id": idEvent});
+    return response;
+  }
 }
