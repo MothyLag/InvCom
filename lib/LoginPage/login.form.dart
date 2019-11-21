@@ -1,11 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_events/HomePage/home.page.dart';
 import 'package:flutter_events/LoginPage/login.request.dart';
 import 'package:flutter_events/signUpPage/signUp.page.dart';
 import 'package:flutter_events/signUpPage/user.type.dart';
+import 'package:localstorage/localstorage.dart';
 
 class LoginFormWidget extends StatefulWidget {
   @override
@@ -15,6 +14,7 @@ class LoginFormWidget extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginFormWidget> {
+  final LocalStorage storage = new LocalStorage('token');
   final _user = User();
   final _formKey = GlobalKey<FormState>();
   @override
@@ -56,8 +56,19 @@ class _LoginFormState extends State<LoginFormWidget> {
                         request.login({
                           "email": _user.email,
                           "password": _user.password
-                        }).then((response) =>
-                            print("respuesta: " + response.toString()));
+                        }).then((response) => {
+                              if (response.body != "false")
+                                {
+                                  storage.setItem("token", response.body),
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MyHomePage(
+                                                title: "MyEvents",
+                                                localStorage: storage,
+                                              )))
+                                }
+                            });
                       }
                     },
                   ),
