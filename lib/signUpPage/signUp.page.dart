@@ -7,15 +7,12 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Registrate"),
-      ),
-      body: Flex(
-        direction: Axis.vertical,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[SignUpForm()],
-      ),
-    );
+        appBar: AppBar(
+          title: Text("Registrate"),
+        ),
+        body: Container(
+          color: Color.fromRGBO(108, 113, 242, 1.0),
+          child: SignUpForm(),
+        ));
   }
 }

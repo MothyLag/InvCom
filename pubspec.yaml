@@ -7,6 +7,7 @@ environment:
   sdk: ">=2.4.0 <3.0.0"
 
 dependencies:
+  toast: ^0.1.5
   esys_flutter_share: ^1.0.2
   qr_flutter: ^3.1.0
   localstorage: ^3.0.0
@@ -23,5 +24,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: fonts/Pacifico/Pacifico-Regular.ttf
   assets:
     - images/picture.png
+    - images/ticket.png
